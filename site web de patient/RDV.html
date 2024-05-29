@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>DEMANDE DE RENDEZ-VOUS</title>
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+</head>
+<body style="background-color: #f7f7f7">
+  <div class="navbar">
+    <img src="images/11zon_cropped.png">
+    
+    <p> <a href="home.html">AMAR MEDICAL CLINIC</a></p>
+    <div class="navbar-items">
+      <a href="home.html #services">Services</a>
+     <a href="home.html #contact">Contact</a>  
+      <a href="RDV.html">Rendez-vous</a>
+
+    </div>
+</div>
+  
+        <div class="boite">  
+        
+        <div class="container2">
+            
+  <h1>DEMANDE DE RENDEZ-VOUS</h1>
+  <p2 style="display: inline-block; margin-top: 20px;  font-family: 'Rubik', sans-serif;">Pour toute urgence, veuillez appeler le 05 52 77 55 90. Votre gestionnaire de cas personnel s'assurera que vous receviez les meilleurs soins possibles</p2>
+  <p>INFORMATIONS DE CONTACT</p>
+  <form>
+    <div class="form-group" style="margin-top: 30px; font-family: 'Rubik', sans-serif;">
+        <label  >Nom   complet:</label>
+        <div class="form-group1">
+        
+      <input style="width: 100%;border: none;border-bottom: 1px solid #40d18e;outline: none;" type="text"placeholder="Prénom"  >
+      <input type="text"placeholder="Nom de famille"  style="margin-left: 20px;width: 100%;border: none;border-bottom: 1px solid #40d18e;outline: none;">
+    </div>
+    
+    </div>
+    <div class="form-group1">
+      <label for="email" style="margin-top: 40px; font-family: 'Rubik', sans-serif;" >Email:</label> 
+      <input style=" margin-top: 85px;margin-left: -45px; width: 100%;border: none;border-bottom: 1px solid #40d18e;outline: none;" type="email"placeholder="zineeddinesaou@gmail.com" id="email" name="email" required>
+      
+        <label for="phone" style="padding-left: 25px;margin-top: 40px; font-family: 'Rubik', sans-serif;">Téléphone:</label>
+      <input style="margin-top: 85px; margin-left: -75px; width: 100%;border: none;border-bottom: 1px solid #40d18e;outline: none; font-family: 'Rubik', sans-serif;" placeholder="06 75 20 20 38" type="tel" id="phone" name="phone" required>
+    </div>
+    
+   
+    <div class="date-picker-container">
+      <label for="dateDisplay">Choisir une date : </label>
+   <div class="display-container">
+      <div id="dateDisplay" class="date-display">Loading...</div>
+      <input type="text" id="datePicker" class="date-picker" style="display: none;">
+    </div>  
+    </div>
+
+    
+    <button  type="button" onclick="location.href='RDV2.html'" style="margin: 25px 0 0 190px;font-size: larger;">Étape suivante &#x2192</button>
+  </form>
+  
+</div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const dateDisplay = document.getElementById('dateDisplay');
+        const datePicker = document.getElementById('datePicker');
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+
+        const formattedDate = tomorrow.toISOString().split('T')[0];
+        dateDisplay.textContent = formattedDate;
+
+        const fp = flatpickr(datePicker, {
+            defaultDate: tomorrow,
+            appendTo: document.querySelector('.date-picker-container'),
+            onChange: (selectedDates, dateStr) => {
+                dateDisplay.textContent = dateStr;
+            },
+            positionElement:formattedDate
+        });
+
+
+        dateDisplay.addEventListener('click', () => {
+            fp.open();
+        });
+        
+        });
+</script>
+</body>
+</html>

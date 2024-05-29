@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>DEMANDE DE RENDEZ-VOUS</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        .container3 {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        h3 {
+            text-align: center;
+            margin: 15px 0;
+  display: inline-block;
+  border-bottom: 2.5px solid #40d18e;
+  padding-top: 20px;
+  font-family: 'Rubik', sans-serif;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .checkbox-group {
+            margin: 10px 0;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #555;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 330px;
+            margin-left: 230px;
+            font-family: 'Rubik', sans-serif;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .message {
+            display: none;
+            
+            padding: 15px;
+            font-size: 18px;
+            color: #0c0202;
+            background: linear-gradient(45deg, rgba(79, 231, 101, 0.45) 0%, rgba(38, 169, 224, 0.45) 100%);
+            border-radius: 5px;
+            text-align: center;
+            position: fixed;
+            bottom: 40px;
+            left: 350px;
+            font-family: 'Rubik', sans-serif;
+
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body style="background-color: #f7f7f7">
+    <div class="navbar">
+        <img src="images/11zon_cropped.png">
+        <p><a href="home.html">AMAR MEDICAL CLINIC</a></p>
+        <div class="navbar-items">
+            <a href="home.html #services">Services</a>
+           <a href="home.html #contact">Contact</a>  
+            <a href="RDV.html">Rendez-vous</a>
+      
+          </div>
+    </div>
+
+    <div class="boite">  
+      <div class="container2" style="height: 580px;">
+            <h1>DEMANDE DE RENDEZ-VOUS</h1>
+            <div class="container3">
+                <h3>Choisissez les traitements dentaires</h3>
+                <form id="treatmentForm">
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="traitement" value="nettoyage">
+                            Nettoyage
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="traitement" value="plombage">
+                            Plombage
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="traitement" value="extraction">
+                            Extraction
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="traitement" value="couronne">
+                            Couronne
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="traitement" value="blanchiment">
+                            Blanchiment
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="traitement" value="appareil">
+                            Appareil dentaire
+                        </label>
+                    </div>
+                    <button type="submit" style="font-family: 'Rubik', sans-serif;">Confirmer</button>
+                    <button type="button" style="width: 200px; margin-left: 0; margin-top: -38px;font-family: 'Rubik', sans-serif;" onclick="location.href='RDV.html'">&#8592; Étape précédente</button>
+                </form>
+                <div class="message" id="confirmationMessage">Votre demande a été envoyé, on vous recontactera sur votre Téléphone ou Votre Adresse Email dans les plus brefs délais.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('treatmentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire
+            document.getElementById('confirmationMessage').style.display = 'block'; // Affiche le message de confirmation
+            setTimeout(function() {
+                document.getElementById('confirmationMessage').style.display = 'none'; // Cache le message après 5 secondes
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
